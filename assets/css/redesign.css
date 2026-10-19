@@ -98,3 +98,12 @@ html{scroll-behavior:smooth;scroll-padding-top:110px}body{background:#f5f5f7;col
 .page-home .content{margin-top:18px;background:#fff}
 @media(max-width:700px){.page-home .product-story{margin:12px 12px 0}.page-home .product-sticky{min-height:0}.page-home .product-heading{padding:26px 20px 0}.page-home .product-heading h1{font-size:72px}.page-home .product-render{height:320px;margin-top:0}.page-home .product-caption{font-size:10px;margin-inline:20px}.drawing-bottom{margin-inline:20px;flex-direction:column;align-items:stretch;gap:20px}.drawing-views button{flex:1;padding:10px}.drawing-title span{padding:9px;font-size:9px}}
 
+
+/* Public introduction: no unreleased hull visualization or project name. */
+.page-home .public-intro{min-height:540px;display:flex;flex-direction:column;justify-content:space-between}
+.page-home .public-intro .product-heading{padding:45px 36px}
+.page-home .public-intro h1{font-size:clamp(56px,7vw,88px);line-height:1.02;letter-spacing:-.045em;margin:24px 0}
+.public-intro-copy{max-width:490px;font-size:19px;line-height:1.6;text-align:left}
+.public-intro .drawing-title{grid-template-columns:auto auto}
+.public-intro .drawing-title span:nth-child(2){border-right:0}
+@media(max-width:700px){.page-home .public-intro{min-height:0}.page-home .public-intro .product-heading{padding:32px 22px}.public-intro-copy{font-size:17px}}
