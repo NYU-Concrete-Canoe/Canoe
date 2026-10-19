@@ -10,58 +10,73 @@
   ],
   "leadership": [
     {
-      "name": "Janice Chen",
-      "role": "Team Captain",
-      "image": "assets/img/headshots/janiceC.JPG"
+      "name": "Yanik",
+      "role": "Captain",
+      "image": ""
     },
     {
-      "name": "Dwayne Ong",
-      "role": "Hull Design",
-      "image": "assets/img/headshots/dwayneO.JPG"
+      "name": "Barnabas",
+      "role": "Captain",
+      "image": ""
     },
     {
-      "name": "Vivian Zou",
+      "name": "Alex",
+      "role": "Principle Hull Engineer",
+      "image": ""
+    },
+    {
+      "name": "Yamin",
+      "role": "Principle Structural Engineer",
+      "image": ""
+    },
+    {
+      "name": "Leo",
       "role": "Construction Manager",
-      "image": "assets/img/headshots/vivianZ.JPG"
+      "image": ""
     },
     {
-      "name": "Tony Chen",
+      "name": "Rami",
+      "role": "Construction Manager",
+      "image": ""
+    },
+    {
+      "name": "Samira",
+      "role": "Principle Reaction Manager",
+      "image": ""
+    },
+    {
+      "name": "Andrew",
+      "role": "Principle Reaction Manager",
+      "image": ""
+    },
+    {
+      "name": "Joy",
+      "role": "Principle Graphic Designer",
+      "image": ""
+    },
+    {
+      "name": "Savannah",
+      "role": "Principle Graphic Design",
+      "image": ""
+    },
+    {
+      "name": "Yufei",
+      "role": "Principle Software Engineer",
+      "image": ""
+    },
+    {
+      "name": "Tony",
       "role": "Paddling Captain",
-      "image": "assets/img/headshots/tonyC.JPG"
-    },
-    {
-      "name": "Malik",
-      "role": "Marketing Lead",
-      "image": "assets/img/headshots/malikU.png"
-    },
-    {
-      "name": "Julia Jakubisiak",
-      "role": "Principal Reaction Engineer",
-      "image": "assets/img/headshots/juliaJ.JPG"
-    },
-    {
-      "name": "Yanik Jhaveri",
-      "role": "Head of Optimization and Automation & Aesthetics",
-      "image": "assets/img/headshots/yanikJ.JPG"
-    },
-    {
-      "name": "Yamin Dembrow",
-      "role": "Structural Lead",
       "image": ""
     },
     {
-      "name": "Ren Liao",
-      "role": "Principal Reaction Engineer",
+      "name": "Shambhavi",
+      "role": "Marketing Director",
       "image": ""
     },
     {
-      "name": "Joy Lin",
-      "role": "Aesthetics",
-      "image": ""
-    },
-    {
-      "name": "Alex Huang",
-      "role": "Senior Advisor",
+      "name": "JT",
+      "role": "Paddling Coach",
       "image": ""
     }
   ],

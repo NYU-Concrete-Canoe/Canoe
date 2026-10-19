@@ -1,0 +1,160 @@
+/* Shared drawing-sheet system beyond the interactive hull hero. */
+:root{--sheet-paper:#f5f4f0;--sheet-ink:#303536;--sheet-rule:#b8bcb8;--sheet-fine:#d8dbd5;--sheet-grid:linear-gradient(#747b840c 1px,transparent 1px),linear-gradient(90deg,#747b840c 1px,transparent 1px)}
+body.page-home,body.page-other{background:var(--sheet-paper);color:var(--sheet-ink)}
+.sheet-label,.sheet-hero-meta,.sheet-end{font:10px/1.6 var(--technical-font);text-transform:uppercase;letter-spacing:.08em;color:#5a6260}
+.sheet-label{display:block;margin-bottom:22px;text-align:left}
+/* Fine grids are confined to titles and margins; reading areas stay quiet. */
+.page-other .blueprint-hero{position:relative;align-items:flex-start;margin:18px 26px 0;min-height:310px;padding:34px 36px 68px;border:1px solid #999b99;background-color:var(--sheet-paper);background-image:var(--sheet-grid);background-size:20px 20px}
+.blueprint-hero .sheet-label{margin-bottom:22px}
+.page-other .blueprint-hero h1{text-align:left;font-size:clamp(38px,5vw,68px);max-width:1000px;line-height:1.06;margin-bottom:20px}
+.page-other .blueprint-hero p{text-align:left;font-size:18px;max-width:720px;margin-bottom:0}
+.sheet-hero-meta{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;border-top:1px solid var(--sheet-rule)}
+.sheet-hero-meta span{padding:9px 18px}
+.sheet-hero-meta span:last-child{border-left:1px solid var(--sheet-rule);min-width:85px;text-align:center}
+/* Content sits inside a consistent sheet border, aligned with the hero. */
+.page-home .content,.page-other .parallax-section{margin:18px 26px 0;border:1px solid var(--sheet-rule);background-color:var(--sheet-paper);background-image:var(--sheet-grid);background-size:20px 20px;padding:0;min-height:0}
+.page-home .content .inner,.page-other .content-wrapper{max-width:1120px;margin:0 auto;padding:50px 40px 60px;background:var(--sheet-paper);border-left:1px solid var(--sheet-fine);border-right:1px solid var(--sheet-fine)}
+.page-other .content-wrapper--wide{max-width:none;padding-inline:28px}
+.page-home .intro{gap:60px;margin-bottom:36px}
+.page-home .intro h2{font-size:clamp(32px,4vw,44px);font-weight:500}
+.page-home .intro p{color:#5e6461}
+.page-home .photo{border:1px solid var(--sheet-rule)}
+.page-home .photo img{border-radius:0}
+.page-home .photo figcaption{padding:12px 16px;border-top:1px solid var(--sheet-rule)}
+.discipline-label{margin:44px 0 0}
+.page-home .engineering{padding-top:18px;gap:0;border-bottom:1px solid var(--sheet-rule);counter-reset:discipline}
+.engineering article{padding:24px 24px 28px;border-top:1px solid var(--sheet-rule);border-right:1px solid var(--sheet-rule);counter-increment:discipline}
+.engineering article:first-child{padding-left:0}
+.engineering article:last-child{border-right:0;padding-right:0}
+.engineering article h3::before{content:'0' counter(discipline) ' / ';font:10px var(--technical-font);color:#6d7470;display:block;margin-bottom:18px;letter-spacing:.08em}
+.page-home .home-section{padding-top:44px}
+.page-home .home-section:not(#announcements){margin-top:40px;border-top:1px solid var(--sheet-rule)}
+.page-home .home-section h2{font-size:clamp(28px,3.5vw,38px);font-weight:500}
+.page-home .home-section>p{font-size:17px;line-height:1.7}
+.page-home .support{padding-top:30px;padding-bottom:0}
+.page-home .support p{font-size:16px;max-width:440px}
+.page-home .support .button{font-family:var(--technical-font);font-size:11px}
+/* Components use the same linework and column rhythm as the drawing sheet. */
+.page-other .content-wrapper>section{margin-top:0!important;margin-bottom:52px}
+.page-other .content-wrapper>section:last-child{margin-bottom:0}
+.page-other h2{font-weight:500;font-size:30px}
+.page-other .card{border-top-color:var(--sheet-rule)}
+.page-other .card h2{font-size:28px}
+.page-other .card p{font-size:16px;line-height:1.75}
+.page-other .content-wrapper>section>.card{border-top:0;padding-top:0}
+.page-other .content-wrapper>section>.card>.sheet-label{padding-top:0}
+.page-other .grid{gap:28px;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr))}
+#team-container .card{margin-bottom:0}
+#team-container .card img{aspect-ratio:4/5;object-fit:cover;border:1px solid var(--sheet-rule)}
+#team-container .card h3{font-size:21px}
+#team-container .card p{font:11px/1.6 var(--technical-font);color:#616862}
+.puzzle-grid{border:1px solid var(--sheet-rule);counter-reset:subteam}
+.puzzle-piece{border-bottom:1px solid var(--sheet-rule);border-right:1px solid var(--sheet-rule);counter-increment:subteam}
+.puzzle-piece:nth-child(4n){border-right:0}
+.puzzle-piece:nth-last-child(-n+4){border-bottom:0}
+.piece-body{padding:22px}
+.piece-body h3::before{content:'0' counter(subteam) ' /';display:block;font:10px var(--technical-font);letter-spacing:.08em;color:#727971;margin-bottom:16px}
+#sponsor-grid{margin-top:32px;gap:20px}
+.card-front,.card-back{border:1px solid var(--sheet-rule);background:#faf9f6}
+.card-back h3{font-size:23px}
+.news-heading{border-top:0;padding-top:0}
+.news-rail{margin-top:26px}
+.news-entry{background-image:repeating-linear-gradient(90deg,transparent,transparent 15px,#a7afa650 15px,#a7afa650 16px);background-size:100% 5px;background-position:left bottom;background-repeat:no-repeat;border-color:var(--sheet-rule)}
+.news-card{border-color:var(--sheet-rule)}
+.news-navigation button{background:var(--sheet-paper);border-color:#8d958d}
+.archive-label{margin-bottom:10px}
+.t-rail{padding-bottom:20px}
+.t-stop::before{background:var(--sheet-rule)!important}
+.t-marker-year{background:var(--sheet-paper);border-color:var(--sheet-rule)}
+.t-marker::after{border-radius:0;width:7px;height:7px;background:#646e66;box-shadow:0 0 0 5px var(--sheet-paper)}
+.t-card{border:1px solid var(--sheet-rule);background:var(--sheet-paper)}
+.t-text,.t-stop.is-current .t-text{padding:22px}
+.t-stop.is-current .t-marker-year{background:#5700ad;color:#fff}
+.tag{background:transparent;border-color:var(--sheet-rule);font-size:10px}
+.card iframe{border:1px solid var(--sheet-rule)!important;border-radius:0!important;background:#fff}
+.media-window{border-radius:0;border-color:var(--sheet-rule)}
+#contactForm{margin-top:24px}
+#contactForm label{font-family:var(--technical-font);font-size:11px!important;text-transform:uppercase;letter-spacing:.04em}
+.card #contactForm input:not([type=hidden]):not([type=checkbox]),.card #contactForm textarea{border-radius:0!important;background:#faf9f6!important;border-color:#b8bcb8!important}
+#contactForm .btn{border-radius:0}
+/* A compact title strip closes every sheet, like a drawing index. */
+.sheet-end{margin:0 26px;display:grid;grid-template-columns:1fr auto auto;border:1px solid var(--sheet-rule);border-top:0}
+.sheet-end span{padding:12px 18px;border-right:1px solid var(--sheet-rule)}
+.sheet-end span:last-child{border-right:0;min-width:120px;text-align:center}
+.site-footer{max-width:none;margin:0 26px;padding:26px 0 32px;border-top:0}
+.site-footer>span{font-family:var(--technical-font);font-size:10px}
+@media(min-width:1600px){.page-home .content .inner,.page-other .content-wrapper:not(.content-wrapper--wide){max-width:1240px;padding-inline:60px}}
+@media(max-width:900px){.page-home .intro{gap:30px}.engineering article{padding-inline:18px}.puzzle-grid{grid-template-columns:repeat(2,1fr)}.puzzle-piece:nth-child(4n){border-right:1px solid var(--sheet-rule)}.puzzle-piece:nth-child(2n){border-right:0}.puzzle-piece:nth-last-child(-n+4){border-bottom:1px solid var(--sheet-rule)}.puzzle-piece:nth-last-child(-n+2){border-bottom:0}}
+@media(max-width:700px){.page-other .blueprint-hero{margin:12px 12px 0;padding:28px 22px 64px;min-height:260px}.blueprint-hero .sheet-label{font-size:9px;letter-spacing:.06em}.page-other .blueprint-hero h1{font-size:38px}.page-other .blueprint-hero p{font-size:16px}.page-home .content,.page-other .parallax-section{margin:12px 12px 0}.page-home .content .inner,.page-other .content-wrapper{padding:30px 20px 38px;border-inline:0}.page-home .engineering{grid-template-columns:1fr;padding-top:14px}.engineering article,.engineering article:first-child,.engineering article:last-child{border-right:0;padding:22px 0}.engineering article h3::before{display:inline;margin-right:10px}.page-home .home-section{padding-top:30px}.page-home .home-section:not(#announcements){margin-top:30px}.page-home .support{gap:20px}.page-other .content-wrapper>section{margin-bottom:36px}.sheet-end{margin-inline:12px;grid-template-columns:1fr auto;font-size:9px}.sheet-end span{padding:10px}.sheet-end span:nth-child(2){display:none}.sheet-end span:last-child{min-width:95px}.site-footer{margin-inline:22px}.page-other .content-wrapper--wide{padding-inline:14px}.piece-body{padding:18px 14px}.piece-body p{font-size:13px}.t-text,.t-stop.is-current .t-text{padding:18px}.page-other .grid{grid-template-columns:minmax(0,1fr)}#team-container{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}#team-container .card h3{font-size:18px}.sheet-label{font-size:9px}}
+
+/* NYU purple ties the drawing sheets together without tinting body copy. */
+:root{--nyu-purple:#5700ad;--sheet-rule:#b5a4c5;--sheet-fine:#ded4e7;--sheet-grid:linear-gradient(#5700ad0b 1px,transparent 1px),linear-gradient(90deg,#5700ad0b 1px,transparent 1px)}
+.sheet-label,.news-kicker,.season{color:var(--nyu-purple)!important}
+.sheet-label{border-left:3px solid var(--nyu-purple);padding-left:12px}
+.sheet-hero-meta{border-top-color:#a48abf;background:#eee7f4;color:#4a236d}
+.sheet-hero-meta span:last-child{background:var(--nyu-purple);color:#fff;border-left-color:var(--nyu-purple)}
+.page-other .blueprint-hero{border-top:3px solid var(--nyu-purple);border-color:#b5a4c5;border-top-color:var(--nyu-purple)}
+.page-home .product-sticky{border-top:3px solid var(--nyu-purple);border-color:#b5a4c5;border-top-color:var(--nyu-purple);background-image:linear-gradient(#5700ad0e 1px,transparent 1px),linear-gradient(90deg,#5700ad0e 1px,transparent 1px),linear-gradient(#5700ad06 1px,transparent 1px),linear-gradient(90deg,#5700ad06 1px,transparent 1px)}
+.drawing-title{border-color:#a48abf;background:#eee7f4;color:#4a236d}
+.drawing-title span{border-color:#b5a4c5}
+.drawing-title small{border-top-color:#b5a4c5;background:var(--nyu-purple);color:#fff}
+.drawing-views button{border-color:#b5a4c5;color:#4a236d}
+.drawing-views button[aria-pressed=true]{background:var(--nyu-purple);color:#fff;border-color:var(--nyu-purple)}
+.drawing-views button:hover{background:#e8ddf0;color:#5700ad}
+.site-nav a[aria-current=page]{box-shadow:0 2px 0 var(--nyu-purple);padding-bottom:5px}
+.engineering article h3::before,.piece-body h3::before{color:var(--nyu-purple)}
+.puzzle-piece{background:#f0eaf4}
+.puzzle-piece:nth-child(even){background:#f5f1f7}
+.piece-body h3{color:#43235f}
+.news-entry{color:var(--nyu-purple);border-bottom-color:#b5a4c5}
+.news-entry::after{border-color:var(--nyu-purple);background:var(--nyu-purple)}
+.news-position{color:var(--nyu-purple)}
+.news-navigation button{border-color:#a48abf;color:var(--nyu-purple)}
+.news-navigation button:enabled:hover{background:var(--nyu-purple);color:#fff}
+.t-marker-year{color:var(--nyu-purple);border-color:#b5a4c5}
+.t-marker::after{background:var(--nyu-purple)}
+.page-home .support{border-top:2px solid var(--nyu-purple)!important}
+.sheet-end{background:#eee7f4;color:#4a236d}
+.sheet-end span:last-child{background:var(--nyu-purple);color:#fff}
+#contactForm label{color:#4a236d!important}
+#contactForm input:focus,#contactForm textarea:focus{border-color:var(--nyu-purple)!important}
+.site-footer a{color:#5700ad}
+
+/* Continuous drafting paper, including the reading areas and page gutters. */
+:root{
+  --sheet-paper:#f4f1f8;
+  --draft-grid:linear-gradient(#5700ad12 1px,transparent 1px),linear-gradient(90deg,#5700ad12 1px,transparent 1px),linear-gradient(#5700ad06 1px,transparent 1px),linear-gradient(90deg,#5700ad06 1px,transparent 1px);
+  --draft-grid-size:100px 100px,100px 100px,20px 20px,20px 20px;
+}
+body.page-home,body.page-other{
+  background-color:var(--sheet-paper);
+  background-image:var(--draft-grid);
+  background-size:var(--draft-grid-size);
+  background-position:26px 0;
+}
+.page-home .content,.page-other .parallax-section{
+  background:transparent;
+}
+.page-home .content .inner,.page-other .content-wrapper{
+  background:transparent;
+}
+.page-other .blueprint-hero,.page-home .product-sticky{
+  background-color:transparent;
+  background-image:var(--draft-grid);
+  background-size:var(--draft-grid-size);
+}
+.site-header{background:#f7f4fbeF;border-bottom-color:#b5a4c5}
+.institution{color:#60526d}
+.site-footer{background:transparent}
+.puzzle-piece{background:#eee6f480}
+.puzzle-piece:nth-child(even){background:#f7f3fa70}
+.news-card,.news-card:hover{background:#f8f5fb80}
+.news-body{padding-inline:12px}
+.news-body--embed{padding-inline:12px}
+.card-front,.card-back{background:#f7f3fa}
+.sheet-end,.sheet-hero-meta,.drawing-title{background:#e9dff2}
+.drawing-views button{background:#f7f3fa}
+.drawing-views button[aria-pressed=true]{background:#5700ad;color:#fff}
+@media(max-width:700px){body.page-home,body.page-other{background-position:12px 0}.news-body,.news-body--embed{padding-inline:10px}}
+/* Inherit one continuous grid rather than overlaying two misaligned grids. */
+.page-other .blueprint-hero,.page-home .product-sticky{background-image:none}
