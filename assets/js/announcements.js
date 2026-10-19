@@ -1,8 +1,8 @@
 /* ==============================================
    NYU CONCRETE CANOE - FRONT PAGE ANNOUNCEMENTS
    Renders assets/data/announcements.json as a
-   horizontal strip. Scrolling behaviour comes from
-   drag-scroll.js; the scrollbar is hidden.
+   horizontal project log. Drag and keyboard behaviour comes from
+   drag-scroll.js; explicit controls expose the horizontal navigation.
    ============================================== */
 
 (function () {
@@ -118,7 +118,8 @@
     return { url: parsed.href, label: label };
   }
 
-  function renderCard(post) {
+  function renderCard(post, index) {
+    var entry = '<div class="news-entry">Log / ' + String(index + 1).padStart(2, "0") + "</div>";
     var date = formatDate(post.date);
     var image = safeUrl(post.image);
     var link = post.link && safeUrl(post.link.url) ? post.link : null;
@@ -129,7 +130,7 @@
     if (embed) {
       return (
         '<article class="news-card news-card--embed' +
-        (embed.ratio === "video" ? " news-card--video" : "") + '">' +
+        (embed.ratio === "video" ? " news-card--video" : "") + '">' + entry +
         '<div class="news-embed' +
         (embed.ratio === "video" ? " news-embed--video" : "") + '">' +
         '<iframe src="' + esc(embed.url) + '" title="' + esc(embed.label) +
@@ -147,7 +148,7 @@
     }
 
     return (
-      '<article class="news-card">' +
+      '<article class="news-card">' + entry +
       (image
         ? '<img class="news-image" src="' + esc(image) +
           '" alt="" loading="lazy" onerror="this.remove()">'
@@ -211,7 +212,10 @@
         var visible = posts.slice().sort(sortPosts).slice(0, max);
 
         container.innerHTML =
-          "<h2>" + esc(settings.heading || "Latest News") + "</h2>" +
+          '<div class="news-heading"><div><span class="news-kicker">Project log / Team updates</span><h2>' + esc(settings.heading || "Latest News") + '</h2></div>' +
+          '<div class="news-navigation"><span class="news-position" aria-live="polite" aria-atomic="true"></span>' +
+          '<button type="button" class="news-prev" aria-label="Previous news entry" aria-controls="newsRail">←</button>' +
+          '<button type="button" class="news-next" aria-label="Next news entry" aria-controls="newsRail">→</button></div></div>' +
           '<div class="news-rail" id="newsRail" tabindex="0" role="region" ' +
           'aria-label="Latest news, scrolls horizontally">' +
           visible.map(renderCard).join("") +
@@ -220,7 +224,37 @@
         var rail = document.getElementById("newsRail");
         if (rail) {
           if (window.enableDragScroll) window.enableDragScroll(rail);
-          if (visible.length < 2) rail.classList.add("is-short");
+          var cards = Array.from(rail.querySelectorAll(".news-card"));
+          var previous = container.querySelector(".news-prev");
+          var next = container.querySelector(".news-next");
+          var position = container.querySelector(".news-position");
+          var current = 0;
+          function offset(card) { return card.getBoundingClientRect().left - rail.getBoundingClientRect().left + rail.scrollLeft; }
+          function update() {
+            var nearest = 0;
+            cards.forEach(function (card, index) {
+              if (Math.abs(offset(card) - rail.scrollLeft) < Math.abs(offset(cards[nearest]) - rail.scrollLeft)) nearest = index;
+            });
+            current = nearest;
+            var atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 2;
+            if (atEnd) current = cards.length - 1;
+            position.textContent = String(current + 1).padStart(2, "0") + " / " + String(cards.length).padStart(2, "0");
+            previous.disabled = rail.scrollLeft <= 2;
+            next.disabled = atEnd;
+          }
+          function move(direction) {
+            var target = Math.max(0, Math.min(cards.length - 1, current + direction));
+            rail.scrollTo({left: offset(cards[target]), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth"});
+          }
+          previous.addEventListener("click", function () { move(-1); });
+          next.addEventListener("click", function () { move(1); });
+          rail.addEventListener("scroll", update, {passive: true});
+          if (window.ResizeObserver) new ResizeObserver(update).observe(rail);
+          update();
+          if (visible.length < 2) {
+            rail.classList.add("is-short");
+            container.querySelector(".news-navigation").hidden = true;
+          }
         }
       })
       .catch(function (err) {
