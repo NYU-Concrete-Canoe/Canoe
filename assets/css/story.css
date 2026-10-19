@@ -213,3 +213,20 @@ body{color:var(--story-ink)}
 }
 @media(prefers-reduced-motion:reduce){.drawing-rule,.drawing-rule::before,.drawing-rule::after,.caption-reveal{opacity:1!important;transform:none!important;transition:none!important}}
 @media(max-width:700px){.results-grid dd .result-suffix{margin-left:3px}}
+
+.hull-finish{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:12px;margin:16px 30px 0;text-align:left;font:10px var(--technical-font);color:#675175}
+.hull-finish label{text-transform:uppercase;letter-spacing:.04em}
+.hull-finish select{padding:10px 30px 10px 12px;border:1px solid #a48abf;border-radius:0;background:#f4f1f8;color:#43235f;font:11px var(--technical-font);max-width:100%}
+.hull-finish select:focus-visible{outline:2px solid #795591;outline-offset:3px}
+#hullPhotoStatus{font-size:10px}
+.page-engineering .hull-finish+.product-render{margin-top:0}
+@media(max-width:700px){.hull-finish{margin-inline:20px;justify-content:flex-start}.hull-finish select{font-size:10px}}
+
+/* The interactive artwork archive opens the history page. */
+.page-history .product-story{margin-bottom:0;padding-bottom:0;border-bottom:0}
+.page-history .product-sticky{min-height:0;background:#f4f1f8}
+.page-history .product-heading h1{font-size:clamp(40px,5.5vw,68px);font-weight:500;letter-spacing:-.04em;line-height:1.08}
+.page-history .hull-archive-intro{text-align:left;font-size:16px;line-height:1.65;margin:16px 0 0;color:#675175}
+.page-history .hull-finish+.product-render{margin-top:0;height:clamp(280px,32vw,410px)}
+.page-history .parallax-section{margin-top:28px}
+@media(max-width:700px){.page-history .product-heading h1{font-size:40px}.page-history .hull-archive-intro{font-size:14px}.page-history .hull-finish+.product-render{height:280px}}
