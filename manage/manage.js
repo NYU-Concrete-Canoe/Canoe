@@ -771,11 +771,11 @@
       '<span class="sub">Names, roles and headshots on the About page</span>' +
       "</div>" +
       '<div class="section-title">Faculty advisor</div><div id="facultyList"></div>' +
-      '<button class="btn-sm" id="addFaculty" type="button"><i class="fa fa-plus"></i>&nbsp; Add faculty advisor</button>' +
+      '<button class="btn-sm" id="addFaculty" type="button" aria-label="Add faculty advisor"><i class="fa fa-plus"></i>&nbsp; Add faculty advisor</button>' +
       '<div class="section-title">Student leadership</div><div id="leadershipList"></div>' +
-      '<button class="btn-sm" id="addPerson" type="button"><i class="fa fa-plus"></i>&nbsp; Add person</button>' +
+      '<button class="btn-sm" id="addPerson" type="button" aria-label="Add person"><i class="fa fa-plus"></i>&nbsp; Add person</button>' +
       '<div class="actions">' +
-      '<button class="btn-primary" id="publishTeam" type="button"><i class="fa fa-check"></i>&nbsp; Publish changes</button>' +
+      '<button class="btn-primary" id="publishTeam" type="button" aria-label="Publish team changes"><i class="fa fa-check"></i>&nbsp; Publish changes</button>' +
       '<span class="spacer"></span>' +
       '<span class="muted">Drag the handle, or use the arrows, to reorder.</span>' +
       "</div>";

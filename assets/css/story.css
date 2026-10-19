@@ -1,0 +1,184 @@
+/* A photographic homepage with natural section headings and room for the team story. */
+:root{--story-purple:#57068c;--story-ink:#25202b;--story-muted:#686170;--story-line:#cfc3da}
+body{color:var(--story-ink)}
+.site-nav a{gap:0;padding-block:22px;font-size:11px}
+.site-nav a[aria-current=page]{padding-bottom:22px}
+.site-brand small{max-width:200px}
+.site-nav a:hover{color:var(--story-purple)}
+/* Keep the drafting texture, without numbering every section or navigation item. */
+.sheet-label,.sheet-end,.sheet-hero-meta{display:none}
+.engineering article h3::before,.piece-body h3::before{content:none}
+.page-other .blueprint-hero{padding-bottom:42px;min-height:290px}
+.page-other .blueprint-hero h1{margin-top:0}
+.site-footer{border-top:1px solid var(--story-line);padding-top:28px}
+.story-home main section{margin:0}
+.story-home .photo-hero{position:relative;margin:16px 26px 0;min-height:530px;height:min(79svh,840px);overflow:hidden;background:#34393b;color:white;border:1px solid #7a7182}
+.photo-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%;display:block}
+.photo-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,#101419a3 0%,#11141b38 50%,transparent 75%),linear-gradient(0deg,#13131b99,transparent 35%);pointer-events:none}
+.photo-hero-copy{position:relative;z-index:1;padding:clamp(32px,5vw,80px);max-width:1100px}
+.photo-hero .eyebrow{font:11px/1.5 var(--technical-font);text-transform:uppercase;letter-spacing:.13em;color:white;text-align:left;margin:0 0 24px}
+.photo-hero h1{font-size:clamp(48px,6.5vw,100px);font-weight:500;letter-spacing:-.055em;line-height:1.02;color:white;text-align:left;margin:0 0 20px}
+.photo-hero .hero-since{font-size:clamp(20px,2vw,30px);font-weight:400;color:#fff;text-align:left;margin:0}
+.hero-bottom{position:absolute;bottom:0;left:0;right:0;padding:24px clamp(32px,5vw,80px);display:flex;justify-content:space-between;align-items:center;gap:20px;z-index:1}
+.hero-bottom a,.hero-bottom span{font:11px var(--technical-font);color:#fff}
+.hero-bottom a{display:flex;gap:26px;align-items:center;border-bottom:1px solid #ffffff80;padding-bottom:9px}
+.hero-bottom a span{font-size:20px}
+.home-story{max-width:1240px;margin:0 auto;padding:0 48px}
+.story-home .home-story>section{padding:88px 0;border-bottom:1px solid var(--story-line)}
+.home-story h2,.engineering-story h2{font-size:clamp(36px,4.7vw,62px);font-weight:500;letter-spacing:-.045em;line-height:1.08;text-align:left;margin:0;color:var(--story-ink)}
+.home-story p,.engineering-story p{font-size:17px;line-height:1.75;text-align:left;color:var(--story-muted);font-weight:400}
+.home-story a.text-link,.engineering-story a.text-link{font-size:13px;font-weight:500;color:var(--story-purple);display:inline-flex;gap:20px;align-items:center;line-height:1.5}
+.text-link span{font-size:20px;font-weight:400}
+.value-section{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.value-copy p:first-child{font-size:20px;line-height:1.6;color:#463c4e;margin-top:0}
+.value-copy p{margin:0 0 20px}
+.section-topline{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:32px}
+.section-topline h2{font-size:clamp(32px,3.4vw,46px);max-width:720px}
+.section-topline .text-link{flex:none}
+.results-grid{margin:40px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.results-grid>div{display:flex;flex-direction:column-reverse;align-items:flex-start;justify-content:flex-end;border-left:1px solid var(--story-line);padding:0 32px}
+.results-grid>div:first-child{border-left:0;padding-left:0}
+.results-grid dt{font-size:14px;line-height:1.5;font-weight:400;color:var(--story-muted);margin-top:18px}
+.results-grid dt small{display:block;font:11px/1.5 var(--technical-font);margin-top:5px;color:#74677f}
+.results-grid dd{font-size:clamp(70px,8vw,116px);line-height:1;font-weight:500;letter-spacing:-.07em;color:var(--story-purple);margin:0}
+.results-grid dd span{font-size:.37em;vertical-align:top;line-height:1.7;letter-spacing:-.03em;margin-left:7px}
+.section-lead{max-width:660px;margin:0 0 40px}
+.innovation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.innovation-item{display:block;border-top:1px solid var(--story-line);padding-top:22px}
+.innovation-item:hover{text-decoration:none}
+.innovation-item h3{font-size:20px;line-height:1.25;letter-spacing:-.025em;text-align:left;font-weight:500;color:var(--story-ink);margin:22px 0 12px}
+.innovation-item h3 span{color:var(--story-purple)}
+.innovation-item p{font-size:15px;margin:0}
+.innovation-item:hover h3{color:var(--story-purple)}
+/* Schematic concept illustrations: no invented dimensions or measured results. */
+.innovation-diagram{height:140px;position:relative;display:flex;align-items:center;justify-content:center;gap:5px;background:#ece5f366;border:1px solid #cfc3da;background-image:linear-gradient(#57068c08 1px,transparent 1px),linear-gradient(90deg,#57068c08 1px,transparent 1px);background-size:16px 16px;overflow:hidden}
+.diagram-mold i{display:block;width:13%;height:45px;border:1px solid #795591;transform:skewY(-13deg);background:#e1d4eb66}
+.diagram-mold i:nth-child(1),.diagram-mold i:nth-child(5){height:25px}
+.diagram-mold i:nth-child(2),.diagram-mold i:nth-child(4){height:36px}
+.diagram-shell i{position:absolute;width:75%;height:52px;border:1px solid #795591;border-radius:0 0 65% 65%;border-top:0;transform:rotate(-5deg)}
+.diagram-shell i:nth-child(2){width:65%;height:42px;opacity:.55;top:42px}
+.diagram-shell i:nth-child(3){width:55%;height:32px;opacity:.3;top:42px}
+.diagram-mix i{display:block;position:absolute;width:21px;height:21px;border:1px solid #795591;background:#c8b3d966;border-radius:3px;transform:rotate(30deg)}
+.diagram-mix i:nth-child(1){left:22%;top:40%}.diagram-mix i:nth-child(2){left:39%;top:22%;width:29px;height:29px}.diagram-mix i:nth-child(3){left:47%;top:58%;width:18px;height:18px}.diagram-mix i:nth-child(4){left:64%;top:34%}.diagram-mix i:nth-child(5){left:70%;top:63%;width:12px;height:12px}.diagram-mix i:nth-child(6){left:30%;top:70%;width:12px;height:12px}.diagram-mix i:nth-child(7){left:54%;top:17%;width:10px;height:10px}
+.team-feature{display:grid;grid-template-columns:1.12fr 1fr;gap:58px;align-items:center}
+.team-feature figure{margin:0;min-width:0}
+.team-feature figure img{width:100%;height:450px;object-fit:cover;object-position:50% 63%;display:block;border:1px solid var(--story-line)}
+.team-feature figcaption,.engineering-photo figcaption{font:10px/1.7 var(--technical-font);color:#74677f;padding-top:12px;text-align:left}
+.team-feature-copy h2{margin-bottom:24px;font-size:clamp(34px,3.8vw,52px)}
+.team-feature-copy p{font-size:16px;margin:0 0 18px}
+.story-home .home-story>.people-preview{padding-top:36px;padding-bottom:48px}
+#home-team{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;margin-bottom:28px}
+.person-preview{display:block;min-width:0}
+.person-preview:hover{text-decoration:none}
+.person-preview img{width:100%;height:200px;object-fit:cover;display:block;background:#e6e1e9;border:1px solid var(--story-line)}
+.person-preview h3{font-size:21px;font-weight:500;text-align:left;margin:16px 0 6px}
+.person-preview p{font-size:12px;line-height:1.5;margin:0}
+.person-preview:hover h3{color:var(--story-purple)}
+.home-story>.news-section{margin-top:0}
+.home-story #announcements{margin-bottom:24px}
+.home-story .news-heading h2{font-size:38px;line-height:1.2}
+.home-story .news-kicker{display:none}
+.home-story .news-card h3{font-size:21px}
+.home-story .news-card p{font-size:15px}
+.contact-feature{display:grid;grid-template-columns:1.2fr 1fr;gap:70px;align-items:start}
+.contact-feature h2{font-size:clamp(36px,4.5vw,60px);margin-bottom:25px}
+.contact-feature p{max-width:490px;margin:0 0 28px}
+.contact-feature .button{padding:14px 24px;font-size:13px;background:var(--story-purple)!important;border-radius:2px}
+.contact-options{display:flex;flex-direction:column}
+.contact-options a{font-size:14px;line-height:1.5;position:relative;border-bottom:1px solid var(--story-line);padding:18px 24px 18px 0;color:var(--story-ink)}
+.contact-options a:first-child{border-top:1px solid var(--story-line)}
+.contact-options a span{display:block;font-size:11px;color:var(--story-muted);margin-bottom:5px}
+.contact-options a b{font-weight:400;color:var(--story-purple);position:absolute;right:0;bottom:20px;font-size:19px}
+/* Full engineering destination follows the same editorial rhythm. */
+.page-engineering .blueprint-hero{margin:16px 26px 0;padding:60px 44px;min-height:0;border:1px solid var(--story-line);border-top:3px solid var(--story-purple);background:#ede6f255;text-shadow:none}
+.page-engineering .blueprint-hero h1{font-size:clamp(40px,5.5vw,76px);text-align:left;margin:0 0 24px;line-height:1.06;font-weight:500}
+.page-engineering .blueprint-hero p{font-size:18px;text-align:left;max-width:690px;margin:0}
+.engineering-story{max-width:1200px;margin:0 auto;padding:0 48px}
+.page-engineering .engineering-story>section{margin:0;padding:66px 0;border-bottom:1px solid var(--story-line)}
+.engineering-intro,.engineering-detail{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.engineering-intro h2{font-size:40px}
+.engineering-intro p{margin:0}
+.engineering-detail h2{font-size:34px;margin-bottom:22px}
+.engineering-detail p{font-size:16px;margin:0 0 18px}
+.detail-drawing .innovation-diagram{height:260px}
+.detail-drawing>p{font:10px var(--technical-font);text-align:left;padding-top:12px;margin:0;color:#74677f}
+.engineering-photo{margin:0}
+.engineering-photo img{display:block;width:100%;height:330px;object-fit:cover;border:1px solid var(--story-line)}
+.study-intro h2{font-size:38px;margin-bottom:20px}
+.study-intro p{max-width:700px;margin:0}
+.page-engineering .engineering-story>.product-story{padding:0;margin:28px 0 0;border:0;height:auto}
+.page-engineering .product-heading h1{font-size:48px}
+.page-engineering .product-sticky{min-height:0}
+.engineering-next{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.engineering-next h2{font-size:36px}
+.engineering-next>div{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+/* Existing destination pages retain content, with simpler headings. */
+.page-other .puzzle-piece h3::before{content:none}
+.page-other .puzzle-piece{min-height:170px}
+.page-other .sheet-label{display:none}
+@media(min-width:1500px){.home-story{max-width:1380px;padding-inline:60px}.photo-hero-copy{padding-left:max(80px,calc((100vw - 1260px)/2))}.hero-bottom{padding-left:max(80px,calc((100vw - 1260px)/2))}}
+@media(max-width:1100px) and (min-width:901px){.site-nav a{font-size:10px;padding-inline:8px}.site-brand small{max-width:145px}.site-brand img{width:44px}.site-brand{padding-inline:10px}.site-join{padding-inline:10px}.home-story{padding-inline:40px}.value-section,.contact-feature{gap:40px}.team-feature{gap:34px}}
+@media(max-width:900px){.section-topline{align-items:flex-start;flex-direction:column;gap:18px}.value-section{gap:35px}.team-feature{grid-template-columns:1fr;gap:32px}.team-feature figure img{height:390px}.team-feature-copy{max-width:650px}.innovation-grid{gap:20px}.innovation-item h3{font-size:19px}.contact-feature{gap:32px}.results-grid>div{padding-inline:22px}.engineering-detail,.engineering-intro{gap:30px}}
+@media(max-width:700px){
+ .story-home .photo-hero{margin:12px 12px 0;height:72svh;min-height:480px;max-height:680px}
+ .photo-hero>img{object-position:54% 55%}
+ .photo-hero-copy{padding:32px 24px}
+ .photo-hero h1{font-size:clamp(42px,9.6vw,64px);line-height:1.04;letter-spacing:-.045em}
+ .photo-hero .eyebrow{font-size:10px;margin-bottom:20px}
+ .photo-hero .hero-since{font-size:22px}
+ .hero-bottom{padding:20px 24px;gap:16px}
+ .hero-bottom a,.hero-bottom span{font-size:9px}
+ .hero-bottom a{gap:14px}
+ .home-story{padding:0 24px}
+ .story-home .home-story>section{padding:48px 0}
+ .value-section,.contact-feature{grid-template-columns:1fr;gap:26px}
+ .home-story h2{font-size:42px}
+ .value-copy p:first-child{font-size:18px}
+ .home-story p{font-size:16px}
+ .home-story .section-topline h2{font-size:32px}
+ .results-grid{gap:0;margin-top:28px}
+ .results-grid>div{padding-inline:12px}
+ .results-grid dd{font-size:62px}
+ .results-grid dt{font-size:11px;margin-top:12px}
+ .results-grid dt small{font-size:9px}
+ .results-grid dd span{margin-left:3px}
+ .innovation-grid{grid-template-columns:1fr;gap:30px}
+ .innovation-item{display:grid;grid-template-columns:100px 1fr;column-gap:18px;padding-top:20px}
+ .innovation-item .innovation-diagram{height:100px;grid-row:1/3;align-self:start}
+ .innovation-item h3{margin:0 0 10px;font-size:21px;line-height:1.2}
+ .innovation-item p{font-size:14px;line-height:1.6}
+ .diagram-mold{gap:3px}.diagram-mold i{height:32px}.diagram-mold i:nth-child(2),.diagram-mold i:nth-child(4){height:26px}.diagram-mold i:nth-child(1),.diagram-mold i:nth-child(5){height:18px}
+ .diagram-shell i{height:30px}.diagram-shell i:nth-child(2){height:25px;top:34px}.diagram-shell i:nth-child(3){height:20px;top:34px}
+ .diagram-mix i{width:12px;height:12px}.diagram-mix i:nth-child(2){width:16px;height:16px}
+ .team-feature figure img{height:300px}
+ .home-story .team-feature-copy h2{font-size:38px}
+ #home-team{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}
+ .person-preview img{height:180px}
+ .person-preview h3{font-size:20px;margin-top:12px}
+ .person-preview p{font-size:11px}
+ .home-story .news-heading h2{font-size:32px}
+ .contact-options a{font-size:13px;overflow-wrap:anywhere}
+ .page-engineering .blueprint-hero{margin:12px 12px 0;padding:36px 24px}
+ .page-engineering .blueprint-hero h1{font-size:40px}
+ .page-engineering .blueprint-hero p{font-size:16px}
+ .engineering-story{padding:0 24px}
+ .engineering-intro,.engineering-detail,.engineering-next{grid-template-columns:1fr;gap:28px}
+ .page-engineering .engineering-story>section{padding:44px 0}
+ .engineering-story h2{font-size:32px}
+ .detail-drawing .innovation-diagram{height:180px}
+ .engineering-photo img{height:250px}
+ .page-engineering .product-heading h1{font-size:36px}
+ .page-engineering .product-heading{padding:24px 20px 0}
+ .page-engineering .product-render{height:300px}
+ .page-engineering .product-caption{font-size:10px;margin-inline:20px}
+ .page-engineering .drawing-title span{font-size:8px;padding:9px 7px}
+ .page-other .blueprint-hero{padding-bottom:32px;min-height:250px}
+}
+@media(max-width:370px){.home-story{padding-inline:20px}.results-grid dd{font-size:54px}.results-grid>div{padding-inline:9px}.innovation-item{grid-template-columns:80px 1fr}.innovation-item .innovation-diagram{height:85px}.person-preview img{height:160px}}
+.page-engineering .blueprint-hero{height:auto;display:block}
+.page-engineering .product-heading h2{font-size:48px;text-align:left;line-height:1.08;margin:12px 0 0;font-weight:500;letter-spacing:-.04em}
+@media(max-width:700px){.page-engineering .product-heading h2{font-size:36px}}
+
+/* Static hero: the supplied photo appears immediately. */
+.photo-hero>img{object-position:center;opacity:1;animation:none}
+.hero-photo-tools{display:flex;align-items:center}

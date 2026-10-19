@@ -190,3 +190,11 @@ body.page-home,body.page-other{
 @media(max-width:700px){.site-header{margin-inline:12px}.institution{padding-inline:10px;font-size:8px;letter-spacing:0}.site-brand{padding:10px;gap:8px}.site-brand img{width:44px;height:32px}.brand-title{font-size:14px}.brand-title small{font-size:7px;max-width:145px;line-height:1.4}.site-join{padding:10px;font-size:9px}.mobile-menu{padding-inline:10px}.mobile-menu summary{font-size:10px}.mobile-menu summary::after{margin-left:5px}.page-home .product-story,.page-other .blueprint-hero{margin-top:12px}}
 @media(max-width:380px){.brand-title small{max-width:112px;font-size:6px}.site-brand img{width:36px;height:28px}.site-brand{gap:6px;padding-inline:7px}.brand-title{font-size:13px}.site-join{padding-inline:8px;font-size:8px}}
 .site-nav a{flex:1}
+
+/* A CAD selection frame replaces the brand link's hover underline. */
+.site-brand{position:relative}
+.site-brand:hover,.site-brand:focus-visible{text-decoration:none}
+.site-brand::before{content:'';position:absolute;inset:5px;pointer-events:none;opacity:0;transform:scale(.95);transition:opacity 160ms ease,transform 180ms ease;background:linear-gradient(#5700ad,#5700ad) left top/10px 1px no-repeat,linear-gradient(#5700ad,#5700ad) left top/1px 10px no-repeat,linear-gradient(#5700ad,#5700ad) right top/10px 1px no-repeat,linear-gradient(#5700ad,#5700ad) right top/1px 10px no-repeat,linear-gradient(#5700ad,#5700ad) left bottom/10px 1px no-repeat,linear-gradient(#5700ad,#5700ad) left bottom/1px 10px no-repeat,linear-gradient(#5700ad,#5700ad) right bottom/10px 1px no-repeat,linear-gradient(#5700ad,#5700ad) right bottom/1px 10px no-repeat}
+.site-brand:focus-visible::before{opacity:1;transform:scale(1)}
+@media(hover:hover){.site-brand:hover::before{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.site-brand::before{transition:none}}

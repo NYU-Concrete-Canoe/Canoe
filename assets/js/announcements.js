@@ -212,7 +212,7 @@
         var visible = posts.slice().sort(sortPosts).slice(0, max);
 
         container.innerHTML =
-          '<div class="news-heading"><div><span class="news-kicker">04 / Project log</span><h2>' + esc(settings.heading || "Latest News") + '</h2></div>' +
+          '<div class="news-heading"><div><span class="news-kicker">From the team</span><h2>' + esc(settings.heading || "Latest News") + '</h2></div>' +
           '<div class="news-navigation"><span class="news-position" aria-live="polite" aria-atomic="true"></span>' +
           '<button type="button" class="news-prev" aria-label="Previous news entry" aria-controls="newsRail">←</button>' +
           '<button type="button" class="news-next" aria-label="Next news entry" aria-controls="newsRail">→</button></div></div>' +
