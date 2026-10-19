@@ -1,8 +1,8 @@
 /* ==============================================
    NYU CONCRETE CANOE - DRAG SCROLL
-   Shared behaviour for horizontal rails: click-drag,
-   vertical wheel mapped to sideways movement, and
-   arrow keys. Used by the news strip and the timeline.
+   Shared behaviour for horizontal rails: mouse dragging and arrow keys.
+   Native wheel and touch gestures retain their direction.
+   Used by the news strip and the timeline.
 
    Exposes window.enableDragScroll(element, options).
    ============================================== */
@@ -18,6 +18,8 @@
     var down = false, startX = 0, startScroll = 0, moved = 0, onText = false;
 
     rail.addEventListener("pointerdown", function (e) {
+      // Touch scrolling stays native, including vertical page movement.
+      if (e.pointerType === "touch" || e.button !== 0) return;
       // Let links and buttons keep their normal click behaviour.
       if (e.target.closest("a, button")) return;
       // On text: leave it selectable, don't drag.
@@ -65,17 +67,8 @@
       }
     }, true);
 
-    // A vertical wheel over the rail moves it sideways, but only while it
-    // still has room. At either end the page takes over again, so the user is
-    // never trapped in the rail.
-    rail.addEventListener("wheel", function (e) {
-      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
-      var atStart = rail.scrollLeft <= 0;
-      var atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 1;
-      if ((e.deltaY < 0 && atStart) || (e.deltaY > 0 && atEnd)) return;
-      e.preventDefault();
-      rail.scrollLeft += e.deltaY;
-    }, { passive: false });
+    // Do not intercept wheel events: vertical input scrolls the page, while
+    // horizontal trackpad gestures and Shift+wheel use native rail scrolling.
 
     // Keyboard access for the focused rail.
     rail.addEventListener("keydown", function (e) {

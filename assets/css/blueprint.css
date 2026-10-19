@@ -158,3 +158,35 @@ body.page-home,body.page-other{
 @media(max-width:700px){body.page-home,body.page-other{background-position:12px 0}.news-body,.news-body--embed{padding-inline:10px}}
 /* Inherit one continuous grid rather than overlaying two misaligned grids. */
 .page-other .blueprint-hero,.page-home .product-sticky{background-image:none}
+
+/* The navigation is the title band of the drawing set. */
+.site-header{top:0;margin:0 26px;position:sticky;border:1px solid #a48abf;border-top:0;background:#f4f1f8f5;backdrop-filter:blur(16px)}
+.institution{max-width:none;height:28px;padding:5px 14px;font:9px/18px var(--technical-font);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid #b5a4c5;color:#5700ad;background:#e9dff2}
+.site-bar{max-width:none;padding:0;gap:0;align-items:stretch}
+.site-brand{padding:10px 16px;gap:10px;border-right:1px solid #b5a4c5;flex:none}
+.site-brand img{width:62px;height:45px}
+.brand-title{font-size:17px;letter-spacing:-.025em;line-height:1.2}
+.brand-title small{display:block;font:8px/1.5 var(--technical-font);text-transform:uppercase;letter-spacing:.04em;color:#675175;margin-top:5px;white-space:normal;max-width:210px}
+.site-nav{margin-left:auto;align-items:stretch;gap:0;flex:1;justify-content:flex-end}
+.site-nav a{display:flex;flex-direction:column;justify-content:center;gap:8px;padding:13px 14px;border-left:1px solid #d0c1dc;font-size:11px;line-height:1.2;position:relative}
+.site-nav a:first-child{border-left:0}
+.nav-index{font:8px/1 var(--technical-font);color:#8c789c;letter-spacing:.06em;display:block}
+.site-nav a[aria-current=page]{padding-bottom:13px;box-shadow:inset 0 -3px #5700ad;background:#e9dff2;color:#5700ad}
+.site-nav a[aria-current=page] .nav-index{color:#5700ad}
+.site-nav a:hover{background:#eee6f4;text-decoration:none}
+.site-join,.site-join:visited{display:flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:0;font:10px var(--technical-font);border-left:1px solid #5700ad;white-space:nowrap}
+.page-home .product-story,.page-other .blueprint-hero{margin-top:16px}
+.mobile-menu{padding:0 16px;align-self:stretch;border-left:1px solid #b5a4c5}
+.mobile-menu summary{display:flex;align-items:center;height:100%;font:11px var(--technical-font);list-style:none}
+.mobile-menu summary::-webkit-details-marker{display:none}
+.mobile-menu summary::after{content:'+';margin-left:12px;color:#5700ad;font-size:17px}
+.mobile-menu[open] summary::after{content:'−'}
+.mobile-menu nav{border:1px solid #a48abf;border-top:0;background:#f4f1f8!important}
+.mobile-menu nav a{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid #ded4e7}
+.mobile-menu nav a:last-child{border-bottom:0}
+.mobile-menu nav a[aria-current=page]{color:#5700ad}
+@media(max-width:1150px) and (min-width:901px){.site-brand{padding-inline:12px}.brand-title{font-size:15px}.brand-title small{font-size:7px;max-width:160px}.site-brand img{width:50px;height:38px}.site-nav a{padding-inline:10px}.site-join{padding-inline:12px;font-size:9px}}
+@media(max-width:900px){.site-nav{display:none}.site-brand{border-right:0;flex:1}.site-join{margin-left:0}.mobile-menu{display:block}.mobile-menu nav{left:-1px;right:-1px;top:100%;padding:10px 20px;gap:0}}
+@media(max-width:700px){.site-header{margin-inline:12px}.institution{padding-inline:10px;font-size:8px;letter-spacing:0}.site-brand{padding:10px;gap:8px}.site-brand img{width:44px;height:32px}.brand-title{font-size:14px}.brand-title small{font-size:7px;max-width:145px;line-height:1.4}.site-join{padding:10px;font-size:9px}.mobile-menu{padding-inline:10px}.mobile-menu summary{font-size:10px}.mobile-menu summary::after{margin-left:5px}.page-home .product-story,.page-other .blueprint-hero{margin-top:12px}}
+@media(max-width:380px){.brand-title small{max-width:112px;font-size:6px}.site-brand img{width:36px;height:28px}.site-brand{gap:6px;padding-inline:7px}.brand-title{font-size:13px}.site-join{padding-inline:8px;font-size:8px}}
+.site-nav a{flex:1}
